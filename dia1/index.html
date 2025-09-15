@@ -15,16 +15,46 @@
     <input id="a" type="number">
     <input id="b" type="number">
     <button id="suma">Sumar</button>
+
+
+    <input id="numero" type="number">
+    <button id="tablaMultiplicar">TABLA DE MULTIPLICAR</button>
+    <div id="tabla"></div>
+
 </body>
 <script>
     console.log("hola mundo");
-    for (let i=0; i < 11; i++){
-        console.log(i);
-    }
-    const btnSumar= document.querySelector("#suma");
-    btnSumar.addEventListener("click",sumar)
-    function sumar(){
+    const btnSumar = document.querySelector("#suma");
+    btnSumar.addEventListener("click", sumar);
+    function sumar() {
+        let num1 = document.querySelector("#a").value;
+        let num2 = document.querySelector("#b").value;
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
         console.log("sumando");
+        console.log(num1);
+        console.log(num2);
+        let num3 = num1 + num2;
+        console.log("la suma es:", num3);
+        let resultado = document.querySelector("#laSuma");
+        resultado.innerHTML= num3;
+        
     }
+    const btnMult = document.querySelector("#tablaMultiplicar");
+    btnMult.addEventListener("click", mult);
+    function mult(){
+        let numeroMult = document.querySelector("#numero").value;
+        numeroMult = parseInt(numeroMult);
+        console.log(numeroMult);
+        for(i=0; i<11; i++){
+            let multi = i * numeroMult;
+            console.log(numeroMult,"x",i,"=",multi);
+            let tablamulti = document.querySelector("#tabla");
+            tablamulti.innerHTML = '<p>' + numeroMult + ' x ' + i + ' = ' + multi + '</p>';
+
+        }
+    }
+    
 </script>
+
 </html>
