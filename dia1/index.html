@@ -46,11 +46,12 @@
         let numeroMult = document.querySelector("#numero").value;
         numeroMult = parseInt(numeroMult);
         console.log(numeroMult);
+        
         for(i=0; i<11; i++){
             let multi = i * numeroMult;
             console.log(numeroMult,"x",i,"=",multi);
             let tablamulti = document.querySelector("#tabla");
-            tablamulti.innerHTML = '<p>' + numeroMult + ' x ' + i + ' = ' + multi + '</p>';
+            tablamulti.innerHTML += '<p>' + numeroMult + ' x ' + i + ' = ' + multi + '</p>';
 
         }
     }
