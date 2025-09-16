@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnTurnoA">Turno Jugador A</button>
+    <button id="btnTurnoB">Turno Jugador B</button>
+    <div id="txtTurno"></div>
+</body>
+<script>
+    const btnTurnoA = document.querySelector(`#btnTurnoA`);
+    const btnTurnoB= document.querySelector(`#btnTurnoB`);
+    const textoTurno = document.querySelector(`#txtTurno`);
+
+    const turnoA = `Turno jugador A`;
+    const turnoB = `Turno jugador B`;
+    const textoA = `Ha tirado Jugador A`;
+    const textoB = `Ha tirado Jugador B`;
+
+    btnTurnoA.innerHTML = turnoA;
+    btnTurnoB.innerHTML = turnoB;
+    textoTurno.innerHTML = "";
+  
+    btnTurnoA.addEventListener(`click`, turno1);
+    btnTurnoB.addEventListener(`click`, turno2);
+    function turno1(){
+        textoTurno.innerHTML = textoA;
+    }
+    function turno2(){
+        textoTurno.innerHTML = textoB;;
+    }
+</script>
+
+</html>
