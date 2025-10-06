@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor d'Incidencies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/gestionIncidencias/styles.css">
+</head>
+<body>
+    <div class="content container mt-4">
+        <!--Aqui colocare el titulo de la pagina -->
+        <header>
+            <h1>Gestió d'Incidències</h1>
+            <p>Sistema de gestió d'incidències pero el deportament d'IT</p>
+        </header>
+
+        <main>
+            <!--Aqui colocare el total de incidencias, las abiertas, las que hay en proceso y las cerradas-->
+            <section id="stats" class="mb-4">
+                <div class="row">
+                        <div class="col">
+                            <div class="card  mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Numero de incidencias totales</h5>
+                                    <p class="card-text">Incidencies Totals</p>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card  mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Numero de incidencias Obertes</h5>
+                                    <p class="card-text">Incidencies Obertes</p>  
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col">
+                            <div class="card  mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Numero de incidencias en Procés</h5>
+                                    <p class="card-text">Incidencies en Procés</p>  
+                                </div>
+                            </div>
+                        </div>               
+                        <div class="col">
+                            <div class="card  mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Numero de incidencias tancades</h5>
+                                    <p class="card-text">Incidencies Tancades</p>  
+                                </div>
+                            </div>
+                        </div>
+                </div>              
+
+            </section>
+            <!--Aqui colocare un Filtrado, y un boton de Añadir incidencia-->
+                
+            <section>
+            <form class="row mb-3 g-3 align-items-center border" method="GET" action="/filtrar">
+                    <div class="col">
+                        <div class="row g-3 align-items-center">
+                            <label for="estado" class="col">Estat:</label>
+                            <select name="estat" id="estat">
+                                <option value="totsStat">Tots</option>
+                                <option value="obert">Obert</option>
+                                <option value="enProces">En Procés</option>
+                                <option value="tancat">Tancat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row g-3 align-items-center">
+                            <label for="prioritat" class="col">Prioritat:</label>
+                            <select name="prioritat" id="prioritat">
+                                <option value="totsPrio">Tots</option>
+                                <option value="baixa">Baixa</option>
+                                <option value="mitjana">Mitjana</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" id="filtro">Filtrar</button>
+                    </div>
+            </form>
+            <div class="row d-flex float-left">
+                <div class="col">
+                    <a href="#" class="btn btn-success" id="btnNuevaIncidencia">Afegir Incidència</a>
+                </div>
+            </div>
+                
+            </section>
+
+            <!--Aqui colocare la tabla con las incidencias-->
+            <section>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Títol</th>
+                                <th scope="col">Descripció</th> 
+                                <th scope="col">Estat</th>
+                                <th scope="col">Prioritat</th>
+                                <th scope="col">Assignat</th>
+                                <th scope="col">Data de Creació</th>
+                                <th scope="col">Accions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active">
+                                <th id="id">Id</th>
+                                <td id="titulo">Titulo</td>
+                                <td id="descripcion">Descripcion</td>
+                                <td id="estado">Estado</td>
+                                <td id="prio">Prio</td>
+                                <td id="asignado">Asignado</td>
+                                <td id="fecha">Fecha</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary btn-sm" id="btnEditar">Editar</a>
+                                    <a href="#" class="btn btn-danger btn-sm" id="btnEliminar">Eliminar</a>
+                                </td>
+                            </tr>        
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+    <div id="modalIncidencia" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">si</span>
+    <p>Contenido del modal</p>
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
