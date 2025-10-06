@@ -27,3 +27,11 @@ let incidencies = [
     assignat: "Pere Martínez",
   },
 ];
+
+// Variables para gestionar els filtres i l'estat actual
+let estatActual = "totsStat"; 
+let prioritatActual = "totsPrio"; 
+let incidenciesFiltrades = []; 
+
+const ESTATS = ["obert", "en_proces", "tancat"]; 
+const PRIORITATS = ["baixa", "mitjana", "alta"]; 
