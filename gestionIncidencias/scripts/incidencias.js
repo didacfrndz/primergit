@@ -1,3 +1,4 @@
+// Array d'exemple d'incidències
 let incidencies = [
   {
     id: 1,
